@@ -2,4 +2,4 @@
 
 docker-compose -f local-docker-compose.yml up -d
 
-mvn spring-boot:run -Drun.profiles=local
+mvn spring-boot:run

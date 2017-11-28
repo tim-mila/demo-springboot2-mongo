@@ -1,0 +1,6 @@
+spring.data.mongodb:
+  database: demo-test
+  host: dockerhost
+  port: 27017
+  repositories.enabled: true
+  username: admin

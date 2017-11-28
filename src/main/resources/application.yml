@@ -12,23 +12,9 @@ spring:
   profiles: default
 
 spring.data.mongodb:
-  database: jive-to-jive-sample
+  database: demo
   host: dockerhost
   port: 27017
   repositories.enabled: true
   username: admin
 
----
-
-spring:
-  profiles: local
-
-spring.data.mongodb:
-  database: jive-to-jive-sample
-  host: dockerhost
-  port: 27017
-  repositories.enabled: true
-  username: admin
-
-mongoHost: dockerhost:27017
-numberOfRowsToPreview: 10
