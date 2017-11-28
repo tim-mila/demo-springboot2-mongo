@@ -5,17 +5,17 @@ import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.mongodb.repository.MongoRepository
 
-abstract class AbstractMongoCrudService<T> {
+abstract class AbstractMongoCrudService<T> : MongoCrudService<T> {
 
     protected abstract fun repository() : MongoRepository<T, String>
 
-    fun insert(t : T) : T = repository().insert(t)
+    override fun insert(t : T) : T = repository().insert(t)
 
-    fun read(id : String) : T = repository().findById(id).orElseThrow { throw NotFoundException() }
+    override fun read(id : String) : T = repository().findById(id).orElseThrow { throw NotFoundException() }
 
-    fun update(t : T) : T = repository().save(t)
+    override fun update(t : T) : T = repository().save(t)
 
-    fun delete(id : String) = repository().deleteById(id)
+    override fun delete(id : String) = repository().deleteById(id)
 
-    fun page(pageable : Pageable) : Page<T> = repository().findAll(pageable)
+    override fun page(pageable : Pageable) : Page<T> = repository().findAll(pageable)
 }

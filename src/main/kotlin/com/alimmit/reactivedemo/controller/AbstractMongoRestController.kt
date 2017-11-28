@@ -1,16 +1,15 @@
 package com.alimmit.reactivedemo.controller
 
-import com.alimmit.reactivedemo.service.AbstractMongoCrudService
+import com.alimmit.reactivedemo.service.MongoCrudService
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
-import org.springframework.data.mongodb.repository.MongoRepository
 import org.springframework.data.web.PageableDefault
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
 abstract class AbstractMongoRestController<T> {
 
-    protected abstract fun service() : AbstractMongoCrudService<T>
+    protected abstract fun service() : MongoCrudService<T>
 
     @RequestMapping(method = arrayOf(RequestMethod.GET))
     fun page(@PageableDefault(page = 0, size = 10) pageable : Pageable) : Page<T> = service().page(pageable)
