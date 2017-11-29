@@ -1,0 +1,7 @@
+---
+applications:
+- name: cf-spring-mongo-demo
+  buildpack: java_buildpack
+  path: target/reactive-demo-0.0.1-SNAPSHOT.jar
+  services:
+    - cf-spring-mongo-demo

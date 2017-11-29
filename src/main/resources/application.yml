@@ -11,6 +11,11 @@ endpoints:
 spring:
   profiles: default
 
+---
+
+spring:
+  profiles: local
+
 spring.data.mongodb:
   database: demo
   host: dockerhost
